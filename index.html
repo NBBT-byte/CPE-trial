@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C2 Proficiency Reading & Use of English Practice</title>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-hover: #1d4ed8;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-color: #1e293b;
+            --border-color: #cbd5e1;
+            --correct: #16a34a;
+            --incorrect: #dc2626;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+
+        p.subtitle {
+            text-align: center;
+            color: #64748b;
+            margin-top: 0;
+            margin-bottom: 30px;
+        }
+
+        .section {
+            display: none;
+        }
+
+        .section.active {
+            display: block;
+        }
+
+        h2 {
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+
+        .question-card {
+            background: #f1f5f9;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .options label {
+            display: block;
+            margin: 5px 0;
+            cursor: pointer;
+        }
+
+        input[type="text"] {
+            padding: 8px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            width: 250px;
+            font-size: 1rem;
+        }
+
+        button {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        button:hover {
+            background-color: var(--primary-hover);
+        }
+
+        .nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+            border-top: 1px solid var(--border-color);
+            padding-top: 20px;
+        }
+
+        .feedback {
+            margin-top: 10px;
+            padding: 10px;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            display: none;
+        }
+
+        .feedback.correct {
+            background-color: #dcfce7;
+            color: #166534;
+            border: 1px solid #bbf7d0;
+        }
+
+        .feedback.incorrect {
+            background-color: #fee2e2;
+            color: #991b1b;
+            border: 1px solid #fecaca;
+        }
+
+        .explanation {
+            margin-top: 6px;
+            font-size: 0.9rem;
+            color: #475569;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>C2 Proficiency Practice</h1>
+    <p class="subtitle">Reading and Use of English</p>
+
+    <!-- PART 1 -->
+    <div id="part1" class="section active">
+        <h2>Part 1: Multiple-Choice Cloze</h2>
+        <p><em>Read the text and select the best option for each gap (1-8)[cite: 1].</em></p>
+        <p style="background: #e2e8f0; padding: 12px; border-radius: 6px;">
+            Honestly, I don't think any of these methods will (0) save biodiversity. Zoos are the most popular option, but they only protect a tiny fraction of species, mostly the conventionally cute ones that attract visitors, and animals raised in 
+            <select id="p1_q1">
+                <option value="">--Select--</option>
+                <option value="A">A) confinement</option>
+                <option value="B">B) captivity</option>
+                <option value="C">C) restraint</option>
+                <option value="D">D) detention</option>
+            </select> (1) rarely survive once released. National parks sound better, but they are often 
+            <select id="p1_q2">
+                <option value="">--Select--</option>
+                <option value="A">A) inadequately</option>
+                <option value="B">B) sparsely</option>
+                <option value="C">C) meagerly</option>
+                <option value="D">D) deficiently</option>
+            </select> (2) funded and surrounded by human development, so wildlife ends up trapped in 
+            <select id="p1_q3">
+                <option value="">--Select--</option>
+                <option value="A">A) solitary</option>
+                <option value="B">B) isolated</option>
+                <option value="C">C) secluded</option>
+                <option value="D">D) remote</option>
+            </select> (3) patches. Poachers and illegal loggers 
+            <select id="p1_q4">
+                <option value="">--Select--</option>
+                <option value="A">A) flout</option>
+                <option value="B">B) bypass</option>
+                <option value="C">C) dodge</option>
+                <option value="D">D) sidestep</option>
+            </select> (4) the rules anyway. Egg and sperm banks and DNA collections look scientific, but a frozen sample is 
+            <select id="p1_q5">
+                <option value="">--Select--</option>
+                <option value="A">A) utterly</option>
+                <option value="B">B) deeply</option>
+                <option value="C">C) heavily</option>
+                <option value="D">D) harshly</option>
+            </select> (5) useless if the habitat it needs no longer exists. Where would we reintroduce those animals? To be frank, I suspect we've left it too late. Species are disappearing faster than we can protect them, governments keep putting profit before nature, and most people simply turn a 
+            <select id="p1_q6">
+                <option value="">--Select--</option>
+                <option value="A">A) cold</option>
+                <option value="B">B) blind</option>
+                <option value="C">C) neutral</option>
+                <option value="D">D) passive</option>
+            </select> (6) eye. If forced to choose, I'd opt for national parks, but only because the alternative options are even more 
+            <select id="p1_q7">
+                <option value="">--Select--</option>
+                <option value="A">A) grim</option>
+                <option value="B">B) dismal</option>
+                <option value="C">C) hopeless</option>
+                <option value="D">D) desolate</option>
+            </select> (7) Realistically, we are bound to lose most of these species 
+            <select id="p1_q8">
+                <option value="">--Select--</option>
+                <option value="A">A) whatever</option>
+                <option value="B">B) whichever</option>
+                <option value="C">C) however</option>
+                <option value="D">D) whatsoever</option>
+            </select> (8) measures we implement.[cite: 1]
+        </p>
+        <button onclick="submitPart(1)">Submit Part 1</button>
+        <div id="feedback1" class="feedback"></div>
+
+        <div class="nav-buttons">
+            <span></span>
+            <button onclick="changeSection(2)">Next Part &rarr;</button>
+        </div>
+    </div>
+
+    <!-- PART 2 -->
+    <div id="part2" class="section">
+        <h2>Part 2: Open Cloze</h2>
+        <p><em>Think of the word which best fits each gap. Use only one word in each gap (9-16)[cite: 1, 2].</em></p>
+        <div class="question-card">
+            <p>Zoos can protect endangered animals, run breeding programmes and educate the public, <input type="text" id="p2_q9" placeholder="9."> (9) they are costly and can only house a limited number of species[cite: 2]. National parks protect whole habitats, <input type="text" id="p2_q10" placeholder="10."> (10) benefits a multitude of species at once <input type="text" id="p2_q11" placeholder="11."> (11) that they receive adequate funding and enforcement[cite: 2]. Egg and sperm banks could serve <input type="text" id="p2_q12" placeholder="12."> (12) a vital safety net for the future, but they do not assist animals in the wild today, as the technology is still <input type="text" id="p2_q13" placeholder="13."> (13) its infancy[cite: 2]. Overall, we hold the view that national parks are the most effective approach, <input type="text" id="p2_q14" placeholder="14."> (14) protecting habitats keeps entire ecosystems intact[cite: 2]. We are, nevertheless, <input type="text" id="p2_q15" placeholder="15."> (15) complete agreement that the ideal strategy would combine all three methods[cite: 2]. Thank you <input type="text" id="p2_q16" placeholder="16."> (16) listening[cite: 2].</p>
+        </div>
+        <button onclick="submitPart(2)">Submit Part 2</button>
+        <div id="feedback2" class="feedback"></div>
+
+        <div class="nav-buttons">
+            <button onclick="changeSection(1)">&larr; Previous Part</button>
+            <button onclick="changeSection(3)">Next Part &rarr;</button>
+        </div>
+    </div>
+
+    <!-- PART 3 -->
+    <div id="part3" class="section">
+        <h2>Part 3: Word Formation</h2>
+        <p><em>Use the word given in capitals to form a word that fits in the gap (17-24)[cite: 2].</em></p>
+        <div class="question-card">
+            <p>17. We firmly believe all three methods can work in unison to make an ________ impact on conservation. (EXCEPT)[cite: 2] <br><input type="text" id="p3_q17"></p>
+            <p>18. ...inspire millions of children to value global ________. (DIVERSE)[cite: 2] <br><input type="text" id="p3_q18"></p>
+            <p>19. Imagine safeguarding entire natural environments so that thousands of species can ________ thrive side by side... (HARMONY)[cite: 2] <br><input type="text" id="p3_q19"></p>
+            <p>20. ...fostering local ________ through eco-tourism. (PROSPER)[cite: 2] <br><input type="text" id="p3_q20"></p>
+            <p>21. Additionally, genetic banks are truly ________; cutting-edge science allows us to safeguard DNA... (REVOLUTION)[cite: 2] <br><input type="text" id="p3_q21"></p>
+            <p>22. ...meaning we might one day rescue populations from the brink of ________! (EXTINCT)[cite: 2] <br><input type="text" id="p3_q22"></p>
+            <p>23. ...combining all three approaches will secure the ________ of our planet's species. (PRESERVE)[cite: 2] <br><input type="text" id="p3_q23"></p>
+            <p>24. With growing global cooperation, it is ________ not too late to turn the tide. (DENY)[cite: 2] <br><input type="text" id="p3_q24"></p>
+        </div>
+        <button onclick="submitPart(3)">Submit Part 3</button>
+        <div id="feedback3" class="feedback"></div>
+
+        <div class="nav-buttons">
+            <button onclick="changeSection(2)">&larr; Previous Part</button>
+            <button onclick="changeSection(4)">Next Part &rarr;</button>
+        </div>
+    </div>
+
+    <!-- PART 4 -->
+    <div id="part4" class="section">
+        <h2>Part 4: Key Word Transformation</h2>
+        <p><em>Complete the second sentence using the word given so it means the same (3-8 words) (25-30)[cite: 3].</em></p>
+        <div class="question-card">
+            <p>25. People only realized how fragile the ecosystem was after the rainforest had been almost entirely destroyed. (DESTRUCTION)[cite: 3]<br>
+            Only after the near <input type="text" id="p4_q25" placeholder="e.g. destruction of the rainforest did people realize" style="width: 100%;">[cite: 3, 5]</p>
+
+            <p>26. The local community completely ignored the environmental guidelines laid down by the authorities. (BLIND)[cite: 3]<br>
+            The local community <input type="text" id="p4_q26" placeholder="e.g. turned a blind eye to the" style="width: 100%;"> environmental guidelines laid down by the authorities.[cite: 3, 5]</p>
+
+            <p>27. Several rare bird species are extremely close to dying out completely in the near future. (VERGE)[cite: 3]<br>
+            Several rare bird species <input type="text" id="p4_q27" placeholder="e.g. are on the verge of dying" style="width: 100%;"> out completely in the near future.[cite: 3, 5]</p>
+
+            <p>28. The wildlife sanctuary only survived because a generous benefactor donated a large sum of money. (HAD)[cite: 3]<br>
+            The wildlife sanctuary would not have survived <input type="text" id="p4_q28" placeholder="e.g. had a generous benefactor not donated" style="width: 100%;"> a large sum of money.[cite: 3, 5]</p>
+
+            <p>29. Experts believe the sudden increase in elephant poaching is caused by the rising price of ivory. (PUT)[cite: 3]<br>
+            Experts believe the sudden increase in elephant poaching <input type="text" id="p4_q29" placeholder="e.g. can be put down to the" style="width: 100%;"> rising price of ivory.[cite: 3, 5]</p>
+
+            <p>30. It is inevitable that global temperatures will rise if carbon emissions are not reduced immediately. (BOUND)[cite: 3]<br>
+            Global temperatures <input type="text" id="p4_q30" placeholder="e.g. are bound to rise unless" style="width: 100%;"> carbon emissions are reduced immediately.[cite: 3, 5]</p>
+        </div>
+        <button onclick="submitPart(4)">Submit Part 4</button>
+        <div id="feedback4" class="feedback"></div>
+
+        <div class="nav-buttons">
+            <button onclick="changeSection(3)">&larr; Previous Part</button>
+            <span></span>
+        </div>
+    </div>
+</div>
+
+<script>
+    function changeSection(partNum) {
+        document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+        document.getElementById('part' + partNum).classList.add('active');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function submitPart(partNum) {
+        let feedbackEl = document.getElementById('feedback' + partNum);
+        feedbackEl.style.display = 'block';
+        
+        if (partNum === 1) {
+            let answers = { q1: 'B', q2: 'A', q3: 'B', q4: 'A', q5: 'A', q6: 'B', q7: 'C', q8: 'A' };
+            let score = 0;
+            let html = '<h3>Part 1 Corrections & Explanations:</h3><ul>';
+            
+            let explanations = {
+                q1: { 
+                    correct: 'B (captivity)', 
+                    why: 'Fixed collocation: "raised in captivity".',
+                    distractors: 'Confinement is too general/restrictive; restraint implies physical holding back; detention is legal/penal.'
+                },
+                q2: { 
+                    correct: 'A (inadequately)', 
+                    why: 'Natural lexico-grammatical pairing with "funded".',
+                    distractors: 'Sparsely refers to population/density; meagerly implies meager amounts rather than funding state; deficiently is less natural collocation.'
+                },
+                q3: { 
+                    correct: 'B (isolated)', 
+                    why: '"Isolated patches" refers specifically to fragmented habitats.',
+                    distractors: 'Solitary usually applies to individuals; secluded refers to quiet places away from people; remote means far away geographically.'
+                },
+                q4: { 
+                    correct: 'A (flout)', 
+                    why: 'Advanced C2 verb meaning to openly disown or disregard rules/laws ("flout the rules").',
+                    distractors: 'Bypass means to go around an obstacle; dodge means to avoid a physical blow or responsibility; sidestep means to evade an issue.'
+                },
+                q5: { 
+                    correct: 'A (utterly)', 
+                    why: 'High-level adverb-adjective collocation: "utterly useless".',
+                    distractors: 'Deeply collocates with emotions/feelings; heavily collocates with weight/rain/taxes; harshly describes tone/criticism.'
+                },
+                q6: { 
+                    correct: 'B (blind)', 
+                    why: 'Idiomatic expression: "turn a blind eye" (to ignore intentionally).',
+                    distractors: 'Cold, neutral, and passive do not form this fixed idiom.'
+                },
+                q7: { 
+                    correct: 'C (hopeless)', 
+                    why: 'Fits the comparative structure and negative sentiment ("even more hopeless").',
+                    distractors: 'Grim and dismal are adjectives but "hopeless" directly pairs with the context of lacking alternatives; desolate describes physical places.'
+                },
+                q8: { 
+                    correct: 'A (whatever)', 
+                    why: 'Concession clause determiner: "whatever measures we implement".',
+                    distractors: 'Whichever is for a limited choice; however requires an adjective/adverb; whatsoever emphasizes negation (e.g., "no measures whatsoever").'
+                }
+            };
+
+            for (let key in answers) {
+                let userVal = document.getElementById('p1_' + key).value;
+                let isCorrect = (userVal === answers[key]);
+                if (isCorrect) score++;
+                html += `<li><strong>Q${key.replace('q','')}:</strong> Your answer: <strong>${userVal || 'None'}</strong> — ${isCorrect ? '<span style="color:var(--correct)">Correct!</span>' : '<span style="color:var(--incorrect)">Incorrect. Correct is ' + answers[key] + '</span>'}<br>` +
+                        `<span class="explanation"><strong>Explanation:</strong> ${explanations[key].why}<br><em>Why others are wrong:</em> ${explanations[key].distractors}</span></li><br>`;
+            }
+            html += `</ul><p><strong>Total Score: ${score} / 8</strong></p>`;
+            feedbackEl.innerHTML = html;
+            feedbackEl.className = score === 8 ? 'feedback correct' : 'feedback incorrect';
+        }
+        else if (partNum === 2) {
+            let answers = {
+                q9: ['yet', 'but'],
+                q10: ['which'],
+                q11: ['provided', 'providing'],
+                q12: ['as'],
+                q13: ['in'],
+                q14: ['as', 'since', 'given'],
+                q15: ['in'],
+                q16: ['for']
+            };
+            let explanations = {
+                q9: 'Conjunction introducing a contrasting clause[cite: 4].',
+                q10: 'Relative pronoun referring to the whole preceding clause (protecting whole habitats)[cite: 4].',
+                q11: 'Conditional linker (provided that = on condition that)[cite: 4].',
+                q12: 'Preposition following the verb serve (serve as a safety net)[cite: 4].',
+                q13: 'Fixed idiom/prepositional phrase: in its infancy[cite: 4].',
+                q14: 'Causal conjunction introducing a supporting reason[cite: 4].',
+                q15: 'Fixed prepositional collocation: in complete agreement[cite: 4].',
+                q16: 'Fixed preposition following an expression of gratitude (thank you for)[cite: 4].'
+            };
+            let score = 0;
+            let html = '<h3>Part 2 Corrections & Explanations:</h3><ul>';
+            for (let i = 9; i <= 16; i++) {
+                let userVal = document.getElementById('p2_q' + i).value.trim().toLowerCase();
+                let accepted = answers['q' + i];
+                let isCorrect = accepted.includes(userVal);
+                if (isCorrect) score++;
+                html += `<li><strong>Q${i}:</strong> Your answer: <strong>${userVal || 'None'}</strong> — ${isCorrect ? '<span style="color:var(--correct)">Correct!</span>' : '<span style="color:var(--incorrect)">Incorrect. Correct: ' + accepted.join(' / ') + '</span>'}<br>` +
+                        `<span class="explanation"><strong>Explanation:</strong> ${explanations['q' + i]}</span></li><br>`;
+            }
+            html += `</ul><p><strong>Total Score: ${score} / 8</strong></p>`;
+            feedbackEl.innerHTML = html;
+            feedbackEl.className = score === 8 ? 'feedback correct' : 'feedback incorrect';
+        }
+        else if (partNum === 3) {
+            let answers = {
+                q17: 'exceptional',
+                q18: 'biodiversity',
+                q19: 'harmoniously',
+                q20: 'prosperity',
+                q21: 'revolutionary',
+                q22: 'extinction',
+                q23: 'preservation',
+                q24: 'undeniably'
+            };
+            let explanations = {
+                q17: 'Adjective describing \'impact\' (derived from except)[cite: 4].',
+                q18: 'Compound noun formed with prefix bio- and suffix -ity[cite: 4].',
+                q19: 'Adverb modifying the verb \'thrive\'[cite: 4].',
+                q20: 'Uncountable noun following \'fostering local...\'[cite: 4].',
+                q21: 'Adjective following \'truly...\'[cite: 4].',
+                q22: 'Noun complement following preposition \'brink of...\'[cite: 4].',
+                q23: 'Direct object noun formed from the verb preserve[cite: 4].',
+                q24: 'Multi-step transformation requiring prefix un- and adverbial suffix -ably[cite: 4].'
+            };
+            let score = 0;
+            let html = '<h3>Part 3 Corrections & Explanations:</h3><ul>';
+            for (let i = 17; i <= 24; i++) {
+                let userVal = document.getElementById('p3_q' + i).value.trim().toLowerCase();
+                let correctAns = answers['q' + i];
+                let isCorrect = (userVal === correctAns);
+                if (isCorrect) score++;
+                html += `<li><strong>Q${i}:</strong> Your answer: <strong>${userVal || 'None'}</strong> — ${isCorrect ? '<span style="color:var(--correct)">Correct!</span>' : '<span style="color:var(--incorrect)">Incorrect. Correct: ${correctAns}</span>'}<br>` +
+                        `<span class="explanation"><strong>Explanation:</strong> ${explanations['q' + i]}</span></li><br>`;
+            }
+            html += `</ul><p><strong>Total Score: ${score} / 8</strong></p>`;
+            feedbackEl.innerHTML = html;
+            feedbackEl.className = score === 8 ? 'feedback correct' : 'feedback incorrect';
+        }
+        else if (partNum === 4) {
+            let answers = {
+                q25: ['destruction of the rainforest did people realize', 'destruction of the rainforest did people realise'],
+                q26: ['turned a blind eye to the'],
+                q27: ['are on the verge of dying'],
+                q28: ['had a generous benefactor not donated'],
+                q29: ['can be put down to the', 'is put down to the'],
+                q30: ['are bound to rise unless']
+            };
+            let explanations = {
+                q25: 'Target structure: Negative adverbial inversion (Only after + noun phrase + auxiliary inversion)[cite: 5].',
+                q26: 'Target structure: Idiomatic phrase (turn a blind eye to something)[cite: 5].',
+                q27: 'Target structure: Fixed prepositional phrase + gerund (be on the verge of doing something)[cite: 5].',
+                q28: 'Target structure: Inverted third conditional clause without \'if\' (Had + subject + not + past participle)[cite: 5].',
+                q29: 'Target structure: Passive phrasal verb (be put down to = be attributed to / caused by)[cite: 5].',
+                q30: 'Target structure: Adjective of probability (be bound to + infinitive) + negative conditional (unless)[cite: 5].'
+            };
+            let score = 0;
+            let html = '<h3>Part 4 Corrections & Explanations:</h3><ul>';
+            let qNum = 25;
+            for (let key in answers) {
+                let userVal = document.getElementById('p4_' + key).value.trim().toLowerCase().replace(/\s+/g, ' ');
+                let matched = answers[key].some(ans => userVal === ans);
+                if (matched) score++;
+                html += `<li><strong>Q${qNum}:</strong> Your answer: <strong>${userVal || 'None'}</strong> — ${matched ? '<span style="color:var(--correct)">Correct!</span>' : '<span style="color:var(--incorrect)">Incorrect. Correct: ${answers[key][0]}</span>'}<br>` +
+                        `<span class="explanation"><strong>Explanation:</strong> ${explanations[key]}</span></li><br>`;
+                qNum++;
+            }
+            html += `</ul><p><strong>Total Score: ${score} / 6</strong></p>`;
+            feedbackEl.innerHTML = html;
+            feedbackEl.className = score === 6 ? 'feedback correct' : 'feedback incorrect';
+        }
+    }
+</script>
+
+</body>
+</html>
